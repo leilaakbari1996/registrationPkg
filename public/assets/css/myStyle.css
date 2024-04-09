@@ -1,0 +1,104 @@
+
+.form-text-error {
+  color: #dd3232 !important;
+  display: none;
+}
+
+.required-column {
+  border: red 1px solid !important;
+}
+
+.label-required:after {
+  content: " *";
+  color: red;
+}
+
+.my-d-none {
+  display: none;
+}
+
+.form-text-password {
+  color: #dd3232 !important;
+}
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+
+.wait {
+  position: absolute;
+  top: 55%;
+}
+
+.clickable-row {
+  cursor: pointer;
+  background: red !important;
+}
+
+.calculation_result {
+  display: none;
+}
+
+.card-otp {
+  display: none;
+}
+
+.card-phone, .cart_otp {
+  background: #282f53 !important;
+}
+
+.form-check-label {
+  color: #fff !important;
+}
+
+.resend-otp {
+  display: none;
+  padding-left: 0 !important;
+}
+
+#timer {
+  color: #fff;
+}
+
+.my-card {
+  padding: 1rem 0 !important;
+}
+
+.custom-card {
+  margin-bottom: 0 !important;
+}
+
+.tr-report:hover {
+  cursor: pointer;
+}
+
+.my-custom-card {
+  margin-top: 29px;
+}
+
+.tr-report:hover {
+  cursor: pointer;
+}
+
+.my-custom-card {
+  margin-top: 29px;
+}
+
+.btn,body,h1,h2,div,span,a,h3,h4,h5,h6,p
+{
+    font-family: "B Yekan";
+}
+.fw-semibold,.fw-normal,.form-label
+{
+    color: white !important;
+}
+.label_phone
+{
+    text-align: center;
+}

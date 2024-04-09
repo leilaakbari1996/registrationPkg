@@ -1,0 +1,19 @@
+{
+    "name": "leila/registration-platform",
+    "description": "Registration platform with Sanctum.",
+    "require": {
+        "laravel/sanctum": "^4.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Leila\\RegistrationPlatform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leila",
+            "email": "87874568+leilaakbari1996@users.noreply.github.com"
+        }
+    ]
+}
