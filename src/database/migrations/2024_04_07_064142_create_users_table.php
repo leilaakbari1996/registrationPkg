@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
       
-        if(Schema::table('lex_users'))
+        if(Schema::hasTable('lex_users'))
         {
             Schema::table('lex_users', function (Blueprint $table) {
                 $table->string('leila_PhoneNumber')->unique();
