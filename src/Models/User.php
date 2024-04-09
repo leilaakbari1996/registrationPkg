@@ -18,6 +18,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'lex_users';
+    
     protected $fillable = [
         'leila_PhoneNumber',
         'password'
