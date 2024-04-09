@@ -12,13 +12,8 @@ return new class extends Migration
 
     public function up(): void
     {
-        if(Schema::hasTable('users'))
-        {
-            Schema::table('users', function (Blueprint $table) {
-                $table->string('leila_PhoneNumber')->unique();
-            });
-        }else{
-            Schema::create('users', function (Blueprint $table) {
+      
+            Schema::create('lex_users', function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
                 $table->string('leila_PhoneNumber')->unique();
@@ -28,7 +23,7 @@ return new class extends Migration
                 $table->rememberToken();
                 $table->timestamps();
             });
-        }
+        
     }
 
     /**
