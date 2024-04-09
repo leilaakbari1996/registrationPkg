@@ -18,7 +18,7 @@ Add provider and facade in config/app.php
       
         'ReturnMessage' => \Leila\RegistrationPlatform\Facade\Message::class, // <-- add this line at the end of provider array 
         "TransferFacade" => \Leila\RegistrationPlatform\Facade\Transfer::class
- ]
+ ],
  ## step3:
  php artisan vendor:publish
 
