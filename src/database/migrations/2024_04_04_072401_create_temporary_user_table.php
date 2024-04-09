@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('temporary_user', function (Blueprint $table) {
+        Schema::create('lex_temporary_user', function (Blueprint $table) {
             $table->id();
             $table->string('PhoneNumber');
             $table->string('Otp');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('temporary_user');
+        Schema::dropIfExists('lex_temporary_user');
     }
 };
