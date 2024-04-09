@@ -5,7 +5,7 @@ This is a registration platform with sanctum.
 
 # Getting Started
 ## step1:
-composer require leila-akb/registration-platform:"dev-master"
+composer require leila-akb/registration-platform:"dev-main"
 ## step2:
 Add provider and facade in config/app.php
 
