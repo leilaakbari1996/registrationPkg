@@ -20,7 +20,7 @@ Add provider and facade in config/app.php
         "TransferFacade" => \Leila\RegistrationPlatform\Facade\Transfer::class
  ],
  ## step3:
- php artisan vendor:publish
+ php artisan vendor:publish --tag
 
  ## step4:
  php artisan migrate
