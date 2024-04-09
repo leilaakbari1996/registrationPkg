@@ -13,17 +13,19 @@ return new class extends Migration
     public function up(): void
     {
       
+        if(Schema::table('lex_users'))
+        {
+            Schema::table('lex_users', function (Blueprint $table) {
+                $table->string('leila_PhoneNumber')->unique();
+            });
+        }else{
             Schema::create('lex_users', function (Blueprint $table) {
                 $table->id();
-                $table->string('name');
-                $table->string('leila_PhoneNumber')->unique();
-                $table->string('email')->unique();
-                $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
                 $table->rememberToken();
                 $table->timestamps();
             });
-        
+        }
     }
 
     /**
