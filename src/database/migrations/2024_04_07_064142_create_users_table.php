@@ -12,20 +12,22 @@ return new class extends Migration
 
     public function up(): void
     {
-         if(Schema::exists('users'))
+        if(Schema::table('users'))
         {
-    
             Schema::table('users', function (Blueprint $table) {
-                $table->string('PhoneNumber');
+                $table->string('leila_PhoneNumber')->unique();
             });
         }else{
-            $table->id();
-            $table->string('PhoneNumber');
-            $table->string('password');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->timestamps();
+            Schema::create('users', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('email')->unique();
+                $table->timestamp('email_verified_at')->nullable();
+                $table->string('password');
+                $table->rememberToken();
+                $table->timestamps();
+            });
         }
-    }
 
     /**
      * Reverse the migrations.
