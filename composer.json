@@ -1,5 +1,5 @@
 {
-    "name": "leila/registration-platform",
+    "name": "leilaAkb/registration-platform",
     "description": "Registration platform with Sanctum.",
     "require": {
         "laravel/sanctum": "^4.0"
