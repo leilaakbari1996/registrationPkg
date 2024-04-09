@@ -10,7 +10,7 @@ class TemporaryUser extends Eloquent
 {
     use HasFactory;
 
-    protected $table = 'temporary_user';
+    protected $table = 'lex_temporary_user';
     protected $fillable =
     [
         'Otp'           ,
