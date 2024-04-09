@@ -23,6 +23,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('password');
                 $table->rememberToken();
+                 $table->string('leila_PhoneNumber')->unique();
                 $table->timestamps();
             });
         }
