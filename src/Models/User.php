@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'PhoneNumber',
+        'leila_PhoneNumber',
         'password'
     ];
 
@@ -35,9 +35,9 @@ class User extends Authenticatable
 
     public static function updateOrCreateByPhone($phone)
     {
-//        return self::query()->where('PhoneNumber',$phone)->firstOrFail();
+//        return self::query()->where('leila_PhoneNumber',$phone)->firstOrFail();
         return self::updateOrCreate([
-            'PhoneNumber' => $phone
+            'leila_PhoneNumber' => $phone
         ],[
             'password'    => Hash::make('123456')
         ]);
