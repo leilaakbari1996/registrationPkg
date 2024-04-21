@@ -13,6 +13,10 @@ $.myAjax = function(url,data=[],callback = false,callbackError=false,type='POST'
             {
                 $('.my-loader').remove();
                 if(!response.status){
+                    $("[name=one]").val('');
+                    $("[name=two]").val('');
+                    $("[name=three]").val('');
+                    $("[name=four]").val('') ;
                     $.swal('error',response.message,'error',null,$.swalInfo);
                 }else {
                     callback(response.data);
@@ -128,7 +132,7 @@ $.swalInfo = {
     confirmButtonText: 'متوجه شدم!',
     showCancelButton: false,
 }
-$.swal = function (title,text,icon,myAjax = null,swal = null,is_reload=true)
+$.swal = function (title,text,icon,url = null,swal = null,is_reload=true)
 {
     Swal.fire({
         title: title,
@@ -143,12 +147,15 @@ $.swal = function (title,text,icon,myAjax = null,swal = null,is_reload=true)
         showCancelButton: swal.showCancelButton,
     }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed &&  icon =='success' && is_reload) {
-            location.reload()
+        if (result.isConfirmed && url != null &&  icon =='success') {
+            window.location = url;
         }
-        else if (result.isConfirmed &&  icon =='info') {
-            $.myAjax(myAjax.url,myAjax.data,myAjax.callback,$.callbackErrorCreate,myAjax.type)
-        }
+        // else if (result.isConfirmed &&  icon =='success' && is_reload) {
+        //     location.reload()
+        // }
+        // else if (result.isConfirmed &&  icon =='info') {
+        //     $.myAjax(myAjax.url,myAjax.data,myAjax.callback,$.callbackErrorCreate,myAjax.type)
+        // }
 
     });
 }

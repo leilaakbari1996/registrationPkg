@@ -32,9 +32,6 @@
 </head>
 
 <body>
-
-
-
 <!-- Loader -->
 <div id="loader" >
 {{--    <img src="{{myAsset('/assets/images/media/loader.svg')}}" alt="">--}}
@@ -45,7 +42,7 @@
 
     <div class="container">
         <div class="row justify-content-center authentication authentication-basic align-items-center h-100">
-            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-8 col-12">
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
                 <div class="my-4 d-flex justify-content-center">
                     <a href="/">
 {{--                        <img src="{{myAsset('/assets/images/brand-logos/desktop-white.png')}}" alt="logo">--}}
@@ -57,6 +54,7 @@
                         <div class="row gy-3">
                             <form action="">
                                 @csrf
+                                <input type="hidden" value="{{$url}}" name="url">
 
                                 <div class="col-xl-12">
                                     <div class="text-end">
@@ -74,7 +72,7 @@
 
                 <div class="card-otp">
                     <div class="card custom-card cart_otp">
-                        <div class="card-body p-5">
+                        <div class="card-body p-lg-5 p-md-5 p-xl-5 p-sm-5 p-4">
                             <p class="mb-4 text-muted op-7 fw-normal text-center">لطفا کد 4 رقمی پیامک شده را وارد کنید.</p>
                             <div class="row gy-3">
                                 <form action="">

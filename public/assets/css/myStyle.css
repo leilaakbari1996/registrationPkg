@@ -102,3 +102,8 @@
 {
     text-align: center;
 }
+
+.card-phone .cart-body
+{
+    padding: 10px;
+}

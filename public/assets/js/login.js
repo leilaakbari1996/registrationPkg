@@ -1,6 +1,6 @@
-const elementOtp = $('input[type="submit"]');
+const elementOtp   = $('input[type="submit"]');
 const elementLogin = $('button[type="submit"]');
-const resendCode = $('.resend-code');
+const resendCode   = $('.resend-code');
 let swal = {
     'confirmButtonText': 'متوجه شدم!',
     'showCancelButton': false,
@@ -8,7 +8,12 @@ let swal = {
 const Submit = function (e)
 {
     e.preventDefault();
+    $('.resend-otp').css('display','none');
     const PhoneNumber = $("[name=PhoneNumber]").val();
+    $("[name=one]").val('');
+    $("[name=two]").val('');
+    $("[name=three]").val('');
+    $("[name=four]").val('') ;
 
     let data = {
         PhoneNumber : PhoneNumber,
@@ -30,8 +35,8 @@ const SubmitOtp = function (e)
 
     let data = {
         PhoneNumber : PhoneNumber,
-        Otp:Code,
-        _token: $('[name=_token]').val(),
+        Otp         : Code,
+        _token      : $('[name=_token]').val(),
     }
 
     $.myAjax('/login/',data,callbackOtp,$.callbackErrorCreate,'POST',swal);
@@ -52,5 +57,6 @@ const callback = function (result)
 
 const callbackOtp = function ()
 {
-    $.swal('موفقیت آمیز','به سایت لکسون تک خوش آمدید!','success',null,swal)
+    const url = $("[name=url]").val();
+    $.swal('موفقیت آمیز','به سایت خوش آمدید!','success',url,swal)
 }

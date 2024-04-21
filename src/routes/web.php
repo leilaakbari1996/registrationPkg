@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('register','Leila\RegistrationPlatform\Http\Controllers\AuthController@register');
+Route::get('register','Leila\RegistrationPlatform\Http\Controllers\AuthController@register')->name('login');
 Route::post('send-sms','Leila\RegistrationPlatform\Http\Controllers\AuthController@sendSMS');
 Route::post('login','Leila\RegistrationPlatform\Http\Controllers\AuthController@login');
 

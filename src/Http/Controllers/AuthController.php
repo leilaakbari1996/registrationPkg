@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Leila\RegistrationPlatform\Models\User;
 use Leila\RegistrationPlatform\Http\Requests\LoginRequest;
 use Leila\RegistrationPlatform\Http\Requests\OtpRequest;
@@ -16,8 +18,8 @@ class AuthController extends Controller
     use SMS;
     public function register(Request $request)
     {
-
-        return view('LaView::register');
+        $url = url()->previous();
+        return view('LaView::register',compact('url'));
     }
 
     public function SendSMS(LoginRequest $request)
@@ -45,6 +47,7 @@ class AuthController extends Controller
             $data['token']    = $token;
 //            Auth::login($user,1);
             \Illuminate\Support\Facades\Auth::logoutOtherDevices('123456');
+            $data['pageURL'] = Session::get('pageUrl');
             return \ReturnMessage::successResponse($request,$result['msg'],$data);
         }
         return \ReturnMessage::failResponse($request,$result['msg'],[]);
