@@ -10,10 +10,12 @@ composer require leila-akb/registration-platform:"dev-main"
 Add provider and facade in config/app.php
 
 'providers' => \Illuminate\Support\ServiceProvider::defaultProviders()->merge([
+        ...
         \Leila\RegistrationPlatform\AuthServiceProvider::class // <-- add this line at the end of provider array 
     ])->toArray(),
 
 'aliases' => [
+        ...
          'Route'     => \Illuminate\Support\Facades\Route::class,
         'ReturnMessage' => \Leila\RegistrationPlatform\Facade\Message::class, // <-- add this line at the end of provider array 
         "TransferFacade" => \Leila\RegistrationPlatform\Facade\Transfer::class
